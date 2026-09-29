@@ -1,7 +1,7 @@
 # Padrões de Projetos - Avaliação
 
-Nome completo: SEU NOME COMPLETO
-Turma: 1
+Nome completo: Lucas Henrique Borille
+Turma: 2
 
-- questao1: Factory Method (emissão de apólices)
+- questao1: Factory Method (Créditos)
 - questao2: Abstract Factory (checkout internacional)
