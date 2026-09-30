@@ -3,14 +3,9 @@ package cooperativa;
 import java.math.BigDecimal;
 import java.util.List;
 
-public abstract class CreditoConsignado implements Credito {
-
-    private final String cliente;
-    private final BigDecimal valorEmprestado;
-
-    protected CreditoBase(String cliente, BigDecimal valorEmprestado) {
-        this.cliente = cliente;
-        this.valorEmprestado = valorEmprestado;
+public class CreditoConsignado extends CreditoBase {
+    public CreditoConsignado(String cliente, BigDecimal valorEmprestado) {
+        super(cliente, valorEmprestado);
     }
 
     @Override
@@ -19,12 +14,7 @@ public abstract class CreditoConsignado implements Credito {
     }
 
     @Override
-    protected BigDecimal documentosExigidos() {
-        return "contracheque ou extrato de benefício";
-    }
-
-    @Override
-    public BigDecimal calcularPrimeiroJuros() {
-        return valorEmprestado.multiply(jurosPrimeiroMes());
+    public List<String> documentosExigidos() {
+        return List.of("contracheque", "extrato de benefício");
     }
 }
