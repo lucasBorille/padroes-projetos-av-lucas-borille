@@ -9,11 +9,11 @@ public abstract class ConsessaoCredito {
         this.impressora = impressora;
     }
 
-    protected abstract Credito criarCredito(String segurado, BigDecimal valorSegurado);
+    protected abstract Credito criarCredito(String cliente, BigDecimal valorEmprestado);
 
-    public final Credito emitir(String segurado, BigDecimal valorSegurado) {
-        Credito credito = criarCredito(segurado, valorSegurado);
-        BigDecimal premioMensal = credito.calcularPremioMensal();
+    public final Credito emitir(String cliente, BigDecimal valorEmprestado) {
+        Credito credito = criarCredito(cliente, valorEmprestado);
+        BigDecimal premioMensal = credito.calcularPrimeiroJuros();
         impressora.imprimir(credito, premioMensal);
         return credito;
     }

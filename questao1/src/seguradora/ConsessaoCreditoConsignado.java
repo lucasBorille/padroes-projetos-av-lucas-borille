@@ -8,7 +8,7 @@ public class ConsessaoCreditoConsignado extends ConsessaoCredito {
     }
 
     @Override
-    protected Credito criarCredito(String segurado, BigDecimal valorSegurado) {
-        return new CreditoConsignado(segurado, valorSegurado);
+    protected Credito criarCredito(String cliente, BigDecimal valorEmprestado) {
+        return new CreditoConsignado(cliente, valorEmprestado);
     }
 }
