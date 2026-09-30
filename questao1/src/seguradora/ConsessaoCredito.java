@@ -13,7 +13,7 @@ public abstract class ConsessaoCredito {
 
     public final Credito emitir(String cliente, BigDecimal valorEmprestado) {
         Credito credito = criarCredito(cliente, valorEmprestado);
-        BigDecimal premioMensal = credito.calcularPrimeiroJuros();
+        BigDecimal premioMensal = credito.calcularPremioMensal();
         impressora.imprimir(credito, premioMensal);
         return credito;
     }
